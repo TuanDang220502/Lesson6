@@ -1,0 +1,29 @@
+.input-group{
+    size: 5em;
+}
+.header, .footer{
+    background-color: turquoise;
+    height: 10vh;
+    }
+.navbar{
+    width: 800px;
+    margin-left:1000px;
+}
+.btn{
+    margin-left: .2em;
+}
+.dropdown{
+    margin: .5em 0;
+}
+.card{
+    margin:.8em;
+}
+.black{
+    background-color: black;
+}
+.white{
+    background-color: white;
+}
+.gold{
+    background-color: gold;
+}

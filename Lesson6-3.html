@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="Lesson6-3.css">
+  <script src="Lesson6-3.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <div class="header col-sm-12">
+  <nav class="navbar navbar-light ">
+                <div class="container-fluid">
+                  <form class="d-flex">
+                    <input class="form-control me-2" type="Text" placeholder="Type something to search..." aria-label="Type something to search...">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                </div>
+            </nav>
+  </div>
+  <div class="row">
+    <div class="left-sidebar col-sm-3">
+      <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">
+                      Product list
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">Category</a>
+                    <a href="#" class="list-group-item list-group-item-action">news</a>
+                    <a href="#" class="list-group-item list-group-item-action">Membership</a>
+                    <a href="#" class="list-group-item list-group-item-action disabled">Ordered prduct</a>
+                  </div>
+                  <div class="adding-list-item list-group-item" id="addItemsidebar">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="New item..." name="add">
+                      <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="button" onclick="callAPI()">Add</button>
+                      </div>
+                    </div>
+                  </div>
+    </div>
+    <div class="left-sidebar col-sm-9">
+    <table>
+      <tr>
+        <td><div class="card" id="item-1" style="width: 18rem;">
+          <img src="https://logovina.com/wp-content/uploads/2020/07/logo-iphone.jpg" class="card-img-top" alt="..." width="200px" height="180px">
+          <div class="card-body">
+            <h5 class="card-title">Iphone 1</h5>
+            <p class="card-text">A brand new Apple product which provide various option for you to choose</p>
+            <a href="#" class="btn btn-primary">Order</a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                changeColor
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" onclick="changeColor('black', 1)" href="#">Black</a>
+                <a class="dropdown-item" onclick="changeColor('white', 1)" href="#">White</a>
+                <a class="dropdown-item" onclick="changeColor('gold', 1)" href="#">Gold</a>
+              </div>
+            </div>
+          </div>
+        </div></td>
+        <td><div class="card" id="item-2" style="width: 18rem;">
+          <img src="https://fptshop.com.vn/uploads/images/tin-tuc/101167/Originals/iphone-2g-3d-model-max-obj-fbx-mtl-mat.jpg" class="card-img-top" alt="..." width="200px" height="180px">
+          <div class="card-body">
+            <h5 class="card-title">Iphone 2</h5>
+            <p class="card-text">A brand new Apple product which provide various option for you to choose</p>
+            <a href="#" class="btn btn-primary">Order</a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                changeColor
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" onclick="changeColor('black',2)"href ="#">Black</a>
+                <a class="dropdown-item" onclick="changeColor('white',2)" href="#">White</a>
+                <a class="dropdown-item" onclick="changeColor('gold',2)"href="#">Gold</a>
+              </div>
+            </div>
+          </div>
+        </div></td>
+        <td><div class="card" style="width: 18rem;">
+          <img src="https://www.2tekvn.net/wp-content/uploads/2020/04/iphone4-2tekvn.jpg" class="card-img-top" alt="..." width="200px" height="180px">
+          <div class="card-body">
+            <h5 class="card-title">Iphone 3</h5>
+            <p class="card-text">A brand new Apple product which provide various option for you to choose</p>
+            <a href="#" class="btn btn-primary">Order</a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                changeColor
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Black</a>
+                <a class="dropdown-item" href="#">White</a>
+                <a class="dropdown-item" href="#">Gold</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="card" style="width: 18rem;">
+            <img src="https://www.2tekvn.net/wp-content/uploads/2020/04/iphone4-2tekvn.jpg" class="card-img-top" alt="..." width="200px" height="180px">
+            <div class="card-body">
+              <h5 class="card-title">Iphone 4</h5>
+              <p class="card-text">A brand new Apple product which provide various option for you to choose</p>
+              <a href="#" class="btn btn-primary">Order</a>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                  changeColor
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Black</a>
+                  <a class="dropdown-item" href="#">White</a>
+                  <a class="dropdown-item" href="#">Gold</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="card" style="width: 18rem;">
+            <img src="https://fptshop.com.vn/Uploads/images/image001(1376).jpg" class="card-img-top" alt="..." width="200px" height="180px">
+            <div class="card-body">
+              <h5 class="card-title">Iphone 5</h5>
+              <p class="card-text">A brand new Apple product which provide various option for you to choose</p>
+              <a href="#" class="btn btn-primary">Order</a>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                  changeColor
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Black</a>
+                  <a class="dropdown-item" href="#">White</a>
+                  <a class="dropdown-item" href="#">Gold</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td><div class="card" style="width: 18rem;">
+          <img src="https://chuyenphanphoi.vn/upload/product/533087753449.png" class="card-img-top" alt="..." width="200px" height="180px">
+          <div class="card-body">
+            <h5 class="card-title">Iphone 6</h5>
+            <p class="card-text">A brand new Apple product which provide various option for you to choose</p>
+            <a href="#" class="btn btn-primary">Order</a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                changeColor
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Black</a>
+                <a class="dropdown-item" href="#">White</a>
+                <a class="dropdown-item" href="#">Gold</a>
+              </div>
+            </div>
+          </div>
+        </div></td>
+      </tr>
+      <tr>
+        <td><div class="card" style="width: 18rem;">
+          <img src="https://product.hstatic.net/1000329106/product/iphone_7_plus_pink_master.jpg" class="card-img-top" alt="..." width="200px" height="180px">
+          <div class="card-body">
+            <h5 class="card-title">Iphone 7</h5>
+            <p class="card-text">A brand new Apple product which provide various option for you to choose</p>
+            <a href="#" class="btn btn-primary">Order</a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                changeColor
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Black</a>
+                <a class="dropdown-item" href="#">White</a>
+                <a class="dropdown-item" href="#">Gold</a>
+              </div>
+            </div>
+          </div>
+        </div></td>
+        <td><div class="card" style="width: 18rem;">
+          <img src="https://clickbuy.com.vn/uploads/2019/03/thumbiP8-1.jpg" class="card-img-top" alt="..." width="200px" height="180px">
+          <div class="card-body">
+            <h5 class="card-title">Iphone 8</h5>
+            <p class="card-text">A brand new Apple product which provide various option for you to choose</p>
+            <a href="#" class="btn btn-primary">Order</a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                changeColor
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Black</a>
+                <a class="dropdown-item" href="#">White</a>
+                <a class="dropdown-item" href="#">Gold</a>
+              </div>
+            </div>
+          </div>
+        </div></td>
+        <td><div class="card" style="width: 18rem;">
+          <img src="https://vnn-imgs-f.vgcloud.vn/2020/03/09/09/apple-xem-xet-hoan-ra-mat-iphone-9-va-iphone-12.jpg" class="card-img-top" alt="..." width="200px" height="180px">
+          <div class="card-body">
+            <h5 class="card-title">Iphone 9</h5>
+            <p class="card-text">A brand new Apple product which provide various option for you to choose</p>
+            <a href="#" class="btn btn-primary">Order</a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                changeColor
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Black</a>
+                <a class="dropdown-item" href="#">White</a>
+                <a class="dropdown-item" href="#">Gold</a>
+              </div>
+            </div>
+          </div>
+        </div></td>
+      </tr>
+      <tr>
+        <td><div class="card" style="width: 18rem;">
+          <img src="https://bachlongmobile.com/media/catalog/product/cache/2/image/040ec09b1e35df139433887a97daa66f/6/3/636483223586180190_3_13_4.jpg" class="card-img-top" alt="..." width="200px" height="180px">
+          <div class="card-body">
+            <h5 class="card-title">Iphone 10</h5>
+            <p class="card-text">A brand new Apple product which provide various option for you to choose</p>
+            <a href="#" class="btn btn-primary">Order</a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                changeColor
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Black</a>
+                <a class="dropdown-item" href="#">White</a>
+                <a class="dropdown-item" href="#">Gold</a>
+              </div>
+            </div>
+          </div>
+        </div></td>
+        <td><div class="card" style="width: 18rem;">
+          <img src="https://media.croma.com/image/upload/v1605262063/Croma%20Assets/Communication/Mobiles/Images/9001724477470.png" class="card-img-top" alt="..." width="200px" height="180px">
+          <div class="card-body">
+            <h5 class="card-title">Iphone 11</h5>
+            <p class="card-text">A brand new Apple product which provide various option for you to choose</p>
+            <a href="#" class="btn btn-primary">Order</a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                changeColor
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Black</a>
+                <a class="dropdown-item" href="#">White</a>
+                <a class="dropdown-item" href="#">Gold</a>
+              </div>
+            </div>
+          </div>
+        </div></td>
+      </tr>
+    </table>
+    </div>
+    <div class="footer col-sm-12"></div>  
+</body>
+</html>
